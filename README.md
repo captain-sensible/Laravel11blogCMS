@@ -2,10 +2,43 @@
 #LaravelblogEngine
 
 
-LaravelblogEngine is a simple web blog engine and basic content management system.
-Its an alternative option to WordPress, aimed for web developers that need to produce a web site for small business owners or blog enthusiasts. Laravel is widely used so system could be further developed by any web developer.
+Laravel11blogCMS is a simple web blog engine and basic content management system.Its an alternative option to WordPress, aimed for web developers that need to produce a web site for small business owners or blog enthusiasts. Laravel is widely used so system could be further developed by any web developer.
 
-Its written on top of Laravel 11 , using composer to install. A populated composer Json file is present at web root, so it should be relatively easy to update the Laravel core when and if needed and other  software installed using composer. Personally I would manually take out all the ^  carets in the composer.json file , and edit step by step to the  version immediately  after Laravel 11. Otherwise just using  a command composer update will update everything to the most recent, which might result in breaking changes ( i know thats a very common result with codeigniter4, if your not careful)  
+
+Getting release from github up and running:
+
+
+Lets say you downloaded the zip file to your Desktop; unzip with ark if your on Linux or  anyway you can. From a terminal chnage directory to your desktop and issue command : 
+
+
+	andrew@darkstar Desktop]$  php -S localhost:8080 -t Laravel11blogCMS-0.1/public
+	
+	
+You should then see something like :
+[Mon Mar 24 18:07:27 2025] PHP 8.4.4 Development Server (http://localhost:8080) started
+
+IN a web browser navigate to http://localhost:8080 and you should see:
+
+
+<img src ="https://andrinaboutique.com/images/github-working.png" width="750px">
+
+you can also change directory (cd) to inside Laravel11blogCMS-0.1 as follows:
+
+	[andrew@darkstar Desktop]$ cd  Laravel11blogCMS-0.1
+	[andrew@darkstar Laravel11blogCMS-0.1]$ php artisan serve
+
+	INFO  Server running on [http://127.0.0.1:8000].
+
+	Press Ctrl+C to stop the server
+
+
+So that also works; the database exists and is populated as required but on limited php server,but trying to  log in, stated sqlite does not exist. I have development in apache using /etc/hosts to define landing page and also virtualhost files in :
+
+	/etc/httpd/conf/vhosts
+	
+Anyway your setup needs to have the public directory as the one listening to http requests and not the web root.
+
+System is written on top of Laravel 11 , I used composer to install core Laravel 11 . A populated composer Json file is present at web root, so it should be relatively easy to update the Laravel core when and if needed and other  software installed using composer. Personally I would manually take out all the ^  carets in the composer.json file , and edit step by step to the  version immediately  after Laravel 11. Otherwise just using  a command composer update will update everything to the most recent, which might result in breaking changes ( i know thats a very common result with codeigniter4, if your not careful)  
 
 When developing in Apache i worked on scss; I have a grunt.js file which converts the custom.scss to custom.css and also moves the updated file to webroot/public.css
 
